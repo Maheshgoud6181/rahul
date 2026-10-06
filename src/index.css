@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-bg-cream: #FFFDF5;
+  --color-fg-slate: #001D39;
+  --color-muted-slate: #F0F4F8;
+  --color-muted-text: #475569;
+  --color-accent-violet: #7CBCE8;
+  --color-pop-pink: #F472B6;
+  --color-pop-yellow: #FBBF24;
+  --color-pop-mint: #34D399;
+  
+  --shadow-pop: 4px 4px 0px 0px #001D39;
+  --shadow-pop-hover: 6px 6px 0px 0px #001D39;
+  --shadow-pop-active: 2px 2px 0px 0px #001D39;
+  --shadow-pop-lg: 8px 8px 0px 0px #001D39;
+  --shadow-pop-pink: 6px 6px 0px 0px #7CBCE8;
+  --shadow-pop-yellow: 6px 6px 0px 0px #FBBF24;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--color-bg-cream)] text-[var(--color-fg-slate)] font-sans selection:bg-pop-yellow selection:text-fg-slate;
+    background-color: #FFFDF5;
+    background-image: radial-gradient(#001d39 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-opacity: 0.05;
+  }
+}
+
+@layer utilities {
+  .bg-dot-grid {
+    background-image: radial-gradient(#001d39 1.5px, transparent 1.5px);
+    background-size: 16px 16px;
+  }
+  .bg-dot-grid-light {
+    background-image: radial-gradient(#001d39 1.2px, transparent 1.2px);
+    background-size: 14px 14px;
+  }
+  .bg-stripes-pink {
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 8px,
+      rgba(124, 188, 232, 0.15) 8px,
+      rgba(124, 188, 232, 0.15) 12px
+    );
+  }
+}
+
+/* Custom keyframes for Memphis-style wiggle */
+@keyframes geoWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  75% { transform: rotate(-3deg); }
+}
+
+.animate-geo-wiggle {
+  animation: geoWiggle 0.4s ease-in-out infinite;
+}
+
+/* Custom continuous marquee decoration */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee-reverse {
+  animation: marquee 25s linear infinite reverse;
+}

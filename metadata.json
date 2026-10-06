@@ -1,0 +1,6 @@
+{
+  "name": "GeoPlay Design Sandbox",
+  "description": "An interactive playground, sticker designer, and showcase built with the Playful Geometric Design System featuring stable grids, hard drop shadows, and wild decorations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
